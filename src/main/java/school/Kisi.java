@@ -3,6 +3,7 @@ package school;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public abstract class Kisi {
     private String adSoyad;
     private String KimlikNo;

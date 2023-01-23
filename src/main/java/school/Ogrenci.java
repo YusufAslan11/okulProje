@@ -1,5 +1,7 @@
 package school;
 
+import java.util.List;
+
 public class Ogrenci extends Kisi{
     private String numara;
     private String Sinif;
@@ -8,6 +10,23 @@ public class Ogrenci extends Kisi{
         super(adSoyad, kimlikNo, yas);
         this.numara = numara;
         Sinif = sinif;
+    }
+
+    @Override
+    public List<Ogrenci> getOgrenciListesi() {
+        return super.getOgrenciListesi();
+    }
+
+    @Override
+    public void setOgrenciListesi(List<Ogrenci> ogrenciListesi) {
+        super.setOgrenciListesi(ogrenciListesi);
+    }
+
+    public Ogrenci(String adSoyad, String kimlikNo, int yas) {
+        super(adSoyad, kimlikNo, yas);
+    }
+
+    public Ogrenci() {
     }
 
     public Ogrenci(String numara, String sinif) {

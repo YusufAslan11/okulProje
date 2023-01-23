@@ -3,12 +3,13 @@ package school;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class OkulMain {
+public class OkulMain  {
 
-    static Scanner input=new Scanner(System.in);
+    static Scanner input = new Scanner(System.in);
+
+
 
     public static void main(String[] args) {
-
 
         do {
             System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
@@ -17,35 +18,76 @@ public class OkulMain {
 
             System.out.println("1 - Öğrenci İşlemleri");
             System.out.println("2 - Öğretmen İşlemleri");
-            System.out.println("Q - ÇIKIŞ");
+            System.out.println("3 - ÇIKIŞ");
 
-            int select = input.nextInt();
-            String select1 = input.next();
+            int selectAnaMenu = input.nextInt();
+            if (selectAnaMenu == 1) {
+                do {
+                    System.out.println("Öğrenci İşlemleri");
+                    System.out.println("=================");
 
-            if (select == 1) {
-                System.out.println("Öğrenci İşlemleri");
-                System.out.println("=================");
+                    System.out.println("1- Öğrenci Ekle");
+                    System.out.println("2- Öğrenci Arama");
+                    System.out.println("3- Öğrenci Listeleme");
+                    System.out.println("4- Öğrenci Kayıt silme ");
+                    System.out.println("5- Çıkış");
+
+                    int selectAltMenu = input.nextInt();
+                    if (selectAltMenu == 1) {
+                     // ekle();
+                    } else if (selectAltMenu == 2) {
+                        // arama();
+                    } else if (selectAltMenu == 3) {
+                        //listeleme();
+                    } else if (selectAltMenu == 4) {
+                        // silme();
+                    } else if (selectAltMenu == 5) {
+                        break;
+                    } else {
+                        System.out.println("Hatalı giriş yaptınız!!!");
+                    }
+                } while (true);
 
 
-
-
-
-            } else if (select == 2) {
+            } else if (selectAnaMenu == 2) {
                 System.out.println("Öğretmen İşlemleri");
                 System.out.println("==================");
 
+                do {
+                    System.out.println("Öğretmen İşlemleri");
+                    System.out.println("=================");
+                    System.out.println("1- Öğretmen Ekle");
+                    System.out.println("2- Öğretmen Arama");
+                    System.out.println("3- Öğretmen Listeleme");
+                    System.out.println("4- Öğretmen Kayıt silme ");
+                    System.out.println("5- Ana Sayfa");
 
+                    int selectAltMenu2 = input.nextInt();
+                    if (selectAltMenu2 == 1) {
+                        //ekle();
+                    } else if (selectAltMenu2 == 2) {
+                        // arama();
+                    } else if (selectAltMenu2 == 3) {
+                        //listeleme();
+                    } else if (selectAltMenu2 == 4) {
+                        // silme();
+                    } else if (selectAltMenu2 == 5) {
+                        break;
 
+                    } else {
+                        System.out.println("Hatalı giriş yaptınız!!!");
+                    }
+                } while (true);
 
-
-            } else if (select1.equalsIgnoreCase("Q")) {
+            } else if (selectAnaMenu==3) {
                 System.out.println("Teşekkür ederiz");
+                break;
 
-
-            } else {
+            }else {
                 System.out.println("Hatalı giriş yaptınız");
             }
 
-        }while(true);
+        } while (true);
+
     }
 }
