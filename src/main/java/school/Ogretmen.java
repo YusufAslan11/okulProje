@@ -1,19 +1,19 @@
 package school;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ogretmen extends Kisi {
     private String bolum;
     private int sicilNo;
+    private List<Ogretmen>ogretmenListesi=new ArrayList<>();
 
-    @Override
     public List<Ogretmen> getOgretmenListesi() {
-        return super.getOgretmenListesi();
+        return ogretmenListesi;
     }
 
-    @Override
     public void setOgretmenListesi(List<Ogretmen> ogretmenListesi) {
-        super.setOgretmenListesi(ogretmenListesi);
+        this.ogretmenListesi = ogretmenListesi;
     }
 
     public Ogretmen(String adSoyad, String kimlikNo, int yas, String bolum, int sicilNo) {
@@ -43,6 +43,9 @@ public class Ogretmen extends Kisi {
         this.sicilNo = sicilNo;
     }
 
+    public void listeyeOgretmenEkle(Ogretmen ogretmen){
+        ogretmenListesi.add(ogretmen);
+    }
     @Override
     public String toString() {
         return "Ogretmen{" +

@@ -1,12 +1,11 @@
 package school;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class OkulMain  {
+public class OkulMain extends Islemler {
 
     static Scanner input = new Scanner(System.in);
-
+    private static Object listeyeOgrenciEkle;
 
 
     public static void main(String[] args) {
@@ -15,27 +14,27 @@ public class OkulMain  {
             System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
             System.out.println("▒▒▒▒▒▒▒▒▒▒ ÖĞRENCİ ve ÖĞRETMEN YÖNETİM PLANI ▒▒▒▒▒▒▒▒▒▒");
             System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
-
-            System.out.println("1 - Öğrenci İşlemleri");
-            System.out.println("2 - Öğretmen İşlemleri");
-            System.out.println("3 - ÇIKIŞ");
-
+            System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒1 - Öğrenci İşlemleri  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+            System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒2 - Öğretmen İşlemleri ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+            System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒3 - ÇIKIŞ              ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+            System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
             int selectAnaMenu = input.nextInt();
             if (selectAnaMenu == 1) {
                 do {
-                    System.out.println("Öğrenci İşlemleri");
-                    System.out.println("=================");
-
-                    System.out.println("1- Öğrenci Ekle");
-                    System.out.println("2- Öğrenci Arama");
-                    System.out.println("3- Öğrenci Listeleme");
-                    System.out.println("4- Öğrenci Kayıt silme ");
-                    System.out.println("5- Çıkış");
-
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ Öğrenci İşlemleri ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒1- Öğrenci Ekle              ▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒2- Öğrenci Arama             ▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒3- Öğrenci Listeleme         ▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒4- Öğrenci Kayıt silme       ▒▒▒▒▒▒▒▒▒▒▒▒▒ ");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒5- Çıkış                     ▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
                     int selectAltMenu = input.nextInt();
                     if (selectAltMenu == 1) {
-                     // ekle();
+                        ogrenciEkle();
                     } else if (selectAltMenu == 2) {
+
                         // arama();
                     } else if (selectAltMenu == 3) {
                         //listeleme();
@@ -48,19 +47,19 @@ public class OkulMain  {
                     }
                 } while (true);
 
-
             } else if (selectAnaMenu == 2) {
-                System.out.println("Öğretmen İşlemleri");
-                System.out.println("==================");
 
                 do {
-                    System.out.println("Öğretmen İşlemleri");
-                    System.out.println("=================");
-                    System.out.println("1- Öğretmen Ekle");
-                    System.out.println("2- Öğretmen Arama");
-                    System.out.println("3- Öğretmen Listeleme");
-                    System.out.println("4- Öğretmen Kayıt silme ");
-                    System.out.println("5- Ana Sayfa");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ Öğretmen İşlemleri ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒1- Öğretmen Ekle              ▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒2- Öğretmen Arama             ▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒3- Öğretmen Listeleme         ▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒4- Öğretmen Kayıt silme       ▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒5- Ana Sayfa                  ▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+                    System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
 
                     int selectAltMenu2 = input.nextInt();
                     if (selectAltMenu2 == 1) {
@@ -79,15 +78,17 @@ public class OkulMain  {
                     }
                 } while (true);
 
-            } else if (selectAnaMenu==3) {
+            } else if (selectAnaMenu == 3) {
                 System.out.println("Teşekkür ederiz");
                 break;
 
-            }else {
+            } else {
                 System.out.println("Hatalı giriş yaptınız");
             }
 
         } while (true);
 
     }
+
+
 }
